@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Žíznivý Bender</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden; 
-    }
-    #score {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 24px;
-      color: rgb(29, 247, 0);
-      font-family: Arial, sans-serif;
-      z-index: 100;
-    }
-  </style>
+  <title>Hra</title>
+  <!-- Odkaz na externí CSS soubor -->
+  <link rel="stylesheet" href="styly.css">
 </head>
 <body>
+  <!-- Div pro zobrazení skóre -->
   <div id="score">Score: 0</div>
+
+  <!-- Hudba na pozadí -->
   <audio id="backgroundMusic" src="hudbaDoPozadi.mp3" loop></audio>
+
+  <!-- Hlavní plátno pro hru -->
   <canvas id="gameCanvas"></canvas>
-  <script src="hra.js"></script>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="#" id="close-btn">×</a>
+    <h2>Herní módy:</h2>
+    <ul>
+      <li><a href="index.html">Bender</a></li>
+      <li><a href="index2.html">Adamek</a></li>
+    </ul>
+  </div>
+
+  <button id="open-sidebar-btn" >Otevřít Sidebar</button>
+  <script src="hraBooster.js"></script>
 </body>
 </html>
