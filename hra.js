@@ -44,9 +44,7 @@ function drawBackground() {
 // Funkce pro hudvu do pozadí
 function startBackgroundMusic() {
   backgroundMusic.volume = 0.1;
-  backgroundMusic.play().catch((error) => {
-    console.log("Hudba nemohla být spuštěna automaticky:", error);
-  });
+  backgroundMusic.play();
 }
 
 // Funkce pro vykreslení hráče
@@ -69,7 +67,7 @@ function drawScore() {
 
 // Přidání nového nepřítele
 function addEnemy() {
-  const size = 50 + Math.random() * 50;
+  const size = 100;
   const x = Math.random() * (canvas.width - size);
   const y = Math.random() * (canvas.height - size);
   const image = enemyImages[Math.floor(Math.random() * enemyImages.length)];
@@ -114,6 +112,9 @@ function gameLoop() {
 // Klávesové události
 window.addEventListener("keydown", (e) => (keyState[e.key] = true));
 window.addEventListener("keyup", (e) => (keyState[e.key] = false));
+document.addEventListener("keydown", () => {
+  backgroundMusic.play();
+}, { once: true });
 
 // Spuštění hry
 addEnemy();
