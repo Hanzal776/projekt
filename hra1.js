@@ -1,3 +1,5 @@
+let dingSound = new Audio("Kolize.mp3");  // Načteme zvuk
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const scoreDisplay = document.getElementById("score");
@@ -55,7 +57,7 @@ function drawPlayer() {
 // Funkce pro vykreslení nepřátel
 function drawEnemies() {
   enemies.forEach((enemy) => {
-    const scaledSize = enemy.size * 2;
+    const scaledSize = enemy.size;
     ctx.drawImage(enemy.image, enemy.x, enemy.y, scaledSize, scaledSize);
   });
 }
@@ -67,7 +69,7 @@ function drawScore() {
 
 // Přidání nového nepřítele
 function addEnemy() {
-  const size = 100;
+  const size = 150;
   const x = Math.random() * (canvas.width - size);
   const y = Math.random() * (canvas.height - size);
   const image = enemyImages[Math.floor(Math.random() * enemyImages.length)];
@@ -78,10 +80,12 @@ function addEnemy() {
 // Detekce kolize mezi hráčem a nepřáteli
 function detectCollisions() {
   enemies = enemies.filter((enemy) => {
-    const scaledSize = enemy.size * 2;
+    const scaledSize = enemy.size;
     const distance = Math.hypot(player.x - (enemy.x + scaledSize / 2), player.y - (enemy.y + scaledSize / 2));
     if (distance < player.size / 2 + scaledSize / 2) {
       score++;
+      dingSound.currentTime = 0; // Restart zvuku před přehráním
+      dingSound.play();  // Přehrání zvuku při kolizi
       setTimeout(addEnemy, 0);
       return false;
     }
