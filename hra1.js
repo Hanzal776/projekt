@@ -84,8 +84,8 @@ function detectCollisions() {
     const distance = Math.hypot(player.x - (enemy.x + scaledSize / 2), player.y - (enemy.y + scaledSize / 2));
     if (distance < player.size / 2 + scaledSize / 2) {
       score++;
-      dingSound.currentTime = 0; // Restart zvuku před přehráním
-      dingSound.play();  // Přehrání zvuku při kolizi
+      dingSound.currentTime = 0; 
+      dingSound.play();
       setTimeout(addEnemy, 0);
       return false;
     }
