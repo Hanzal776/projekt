@@ -13,63 +13,31 @@ body {
     top: 10px;
     left: 10px;
     font-size: 50px;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     z-index: 100;
   }
-  
-  /* Sidebar styly */
-  #sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px; /* Začíná skrytý mimo obrazovku */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    transition: right 0.3s ease; /* Plynulý přechod */
-  }
-  
-  /* Odkazy v sidebaru */
-  #sidebar a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    margin: 10px 0; 
-  }
-  
-  #sidebar a:hover {
-    background-color: #575757;
-  }
-  
-  /* Tlačítko pro zavření */
-  #close-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  #close-btn:hover {
-    color: red;
-  }
-  
-  /* Tlačítko pro otevření sidebaru */
-  #open-sidebar-btn {
+
+  #instructions {
     position: absolute;
-    top: right;
-    right: 40px;
-    font-size: 20px;
-    background-color: #333;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
     color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    pointer-events: none;
   }
-  
-  #open-sidebar-btn:hover {
-    background-color: #575757;
-  }
-  
+
+#restart {
+  position:absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  z-index: 10;
+  pointer-events: none;
+}
