@@ -34,7 +34,7 @@ class Player {
     this.x = x;
     this.y = y;
     this.size = 200;
-    this.speed = speed;
+    this.speed = 20;
   }
 
   draw() {
@@ -64,7 +64,7 @@ class Enemy {
 }
 
 // Inicializace hráče a nepřátel
-const player = new Player(canvas.width / 2, canvas.height / 2, 200, 20);
+const player = new Player(canvas.width / 2, canvas.height / 2, this.size, this.speed);
 let enemies = [];
 let score = 0;
 let gameWon = false;
