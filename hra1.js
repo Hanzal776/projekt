@@ -98,7 +98,7 @@ function showWinScreen() {
 
 // Přidání nepřátel
 function addEnemy() {
-  this.size;
+  this.size = 150;
   this.x = Math.random() * (canvas.width - size);
   this.y = Math.random() * (canvas.height - size);
   this.image = enemyImages[Math.floor(Math.random() * enemyImages.length)];
