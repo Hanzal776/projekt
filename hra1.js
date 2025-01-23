@@ -54,8 +54,8 @@ class Enemy {
   constructor(x, y, size, image) {
     this.x = x;
     this.y = y;
-    this.size = size;
-    this.image = image;
+    this.size = 150;
+    this.image = enemyImages;
   }
 
   draw() {
@@ -113,7 +113,7 @@ function detectCollisions() {
     if (distance < player.size / 2 + enemy.size / 2) {
       score++;
       dingSound.currentTime = 0;
-      dingSound.volume = 0.5;
+      dingSound.volume = 0.3;
       dingSound.play();
       if (score >= 30) {
         gameWon = true;
