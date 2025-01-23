@@ -34,7 +34,7 @@ class Player {
     this.x = x;
     this.y = y;
     this.size = 200;
-    this.speed = 15;
+    this.speed = speed;
   }
 
   draw() {
