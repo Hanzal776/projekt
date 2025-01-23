@@ -33,7 +33,7 @@ class Player {
   constructor(x, y, size, speed) {
     this.x = x;
     this.y = y;
-    this.size = size;
+    this.size = 200;
     this.speed = speed;
   }
 
@@ -54,7 +54,7 @@ class Enemy {
   constructor(x, y, size, image) {
     this.x = x;
     this.y = y;
-    this.size = size;
+    this.size = 150;
     this.image = image;
   }
 
