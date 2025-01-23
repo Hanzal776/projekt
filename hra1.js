@@ -54,7 +54,7 @@ class Enemy {
   constructor(x, y, size, image) {
     this.x = x;
     this.y = y;
-    this.size = 150;
+    this.size = size;
     this.image = image;
   }
 
@@ -64,7 +64,7 @@ class Enemy {
 }
 
 // Inicializace hráče a nepřátel
-const player = new Player(canvas.width / 2, canvas.height / 2, 200, 10);
+const player = new Player(canvas.width / 2, canvas.height / 2, 200, 20);
 let enemies = [];
 let score = 0;
 let gameWon = false;
@@ -115,7 +115,7 @@ function detectCollisions() {
       dingSound.currentTime = 0;
       dingSound.volume = 0.3;
       dingSound.play();
-      if (score >= 20) {
+      if (score >= 30) {
         gameWon = true;
       }
       setTimeout(addEnemy, 0);
