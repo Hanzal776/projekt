@@ -33,8 +33,8 @@ class Player {
   constructor(x, y, size, speed) {
     this.x = x;
     this.y = y;
-    this.size = size;
-    this.speed = speed;
+    this.size = 200;
+    this.speed = 15;
   }
 
   draw() {
@@ -98,7 +98,7 @@ function showWinScreen() {
 
 // Přidání nepřátel
 function addEnemy() {
-  this.size = 150;
+  this.size;
   this.x = Math.random() * (canvas.width - size);
   this.y = Math.random() * (canvas.height - size);
   this.image = enemyImages[Math.floor(Math.random() * enemyImages.length)];
