@@ -92,7 +92,7 @@ function showWinScreen() {
   ctx.drawImage(winImg, 0, 0, canvas.width, canvas.height);
   backgroundMusic.pause();
   backgroundMusic.currentTime = 0;
-  winSound.volume = 1;
+  winSound.volume = 0.6;
   winSound.play();
 }
 
@@ -113,9 +113,9 @@ function detectCollisions() {
     if (distance < player.size / 2 + enemy.size / 2) {
       score++;
       dingSound.currentTime = 0;
-      dingSound.volume = 0.5;
+      dingSound.volume = 0.3;
       dingSound.play();
-      if (score >= 30) {
+      if (score >= 20) {
         gameWon = true;
       }
       setTimeout(addEnemy, 0);
